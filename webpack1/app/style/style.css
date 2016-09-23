@@ -1,0 +1,7 @@
+body{
+	background:blue;
+	color:#FFF;
+	font-size: 18px;
+	font-weight: bolder;
+	transition: all .5s;
+}

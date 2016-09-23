@@ -41,3 +41,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# aji - node_modules
+/webpack1/node_modules/*
