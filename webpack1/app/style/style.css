@@ -5,3 +5,9 @@ body{
 	font-weight: bolder;
 	transition: all .5s;
 }
+
+div{
+	background-image: url(../images/logo.png);
+	width: 100px;
+	height: 100px;
+}

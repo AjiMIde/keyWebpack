@@ -1,20 +1,19 @@
-var webpack = require('webpack')//ÒıÈëÒÔÊµÏÖÄÚÖÃµÄ²å¼ş
-
+var webpack = require('webpack')//å¼•å…¥ä»¥å®ç°å†…ç½®çš„æ’ä»¶
 
 module.exports = {
-    entry: "./app/entry.js",//Î¨Ò»µÄÈë¿ÚÎÄ¼ş
-    output: {//Êä³ö×îºóµÄ´ò°üÎÄ¼ş
+    entry: "./app/entry.js",//å”¯ä¸€çš„å…¥å£æ–‡ä»¶
+    output: {//è¾“å‡ºæœ€åçš„æ‰“åŒ…æ–‡ä»¶
         path: __dirname + '/dist',
         filename: "bundle.js"
     },
     module: {
-        loaders: [//¼ÓÔØµÄÄ£¿é£¬ÓÃÀ´±àÒë
+        loaders: [//åŠ è½½çš„æ¨¡å—ï¼Œç”¨æ¥ç¼–è¯‘
             {
-                test: /\.css$/, //ÕıÔòÆ¥ÅäĞèÒª´¦ÀíµÄÎÄ¼ş
-                loader: "style!css!postcss", //¼ÓÔØµÄloader
-                include: '',//ÊÖ¶¯Ìí¼Ó°üº¬µÄÎÄ¼ş£¬¿ÉÑ¡
-                exclude: '',//ÊÖ»úÆÁ±Î²»ĞèÇóµÄÎÄ¼ş£¬¿ÉÑ¡
-                query: '',//Ìá¹©¶îÍâµÄÉèÖÃ£¬¿ÉÑ¡
+                test: /\.css$/, //æ­£åˆ™åŒ¹é…éœ€è¦å¤„ç†çš„æ–‡ä»¶
+                loader: "style!css!postcss", //åŠ è½½çš„loader
+                include: '',//æ‰‹åŠ¨æ·»åŠ åŒ…å«çš„æ–‡ä»¶ï¼Œå¯é€‰
+                exclude: '',//æ‰‹æœºå±è”½ä¸éœ€æ±‚çš„æ–‡ä»¶ï¼Œå¯é€‰
+                query: '',//æä¾›é¢å¤–çš„è®¾ç½®ï¼Œå¯é€‰
             },
             {
                 test: /\.json$/,
@@ -23,9 +22,9 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel',//ÔÚwebpackµÄmodule²¿·ÖµÄloadersÀï½øĞĞÅäÖÃ¼´¿É
+                loader: 'babel',//åœ¨webpackçš„moduleéƒ¨åˆ†çš„loadersé‡Œè¿›è¡Œé…ç½®å³å¯
                 query: {
-                    presets: ['es2015', 'react'] //±àÒë´ËÀàÎÄ¼ş
+                    presets: ['es2015', 'react'] //ç¼–è¯‘æ­¤ç±»æ–‡ä»¶
                 }
             },
             {
@@ -37,9 +36,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [//Ìí¼Ó²å¼ş£¬webpackÄÚÖÃÁËÒ»Ğ©³£ÓÃ²å¼ş£¬Ò²¿ÉÍ¨¹ı npm °²×°µÚÈı·½²å¼ş
-        new webpack.BannerPlugin('This file is created by aji'),// Banner Ìí¼Ó²å¼ş
-        new webpack.optimize.UglifyJsPlugin({//Ñ¹ËõÎÄ¼ş
+    plugins: [//æ·»åŠ æ’ä»¶ï¼Œwebpackå†…ç½®äº†ä¸€äº›å¸¸ç”¨æ’ä»¶ï¼Œä¹Ÿå¯é€šè¿‡ npm å®‰è£…ç¬¬ä¸‰æ–¹æ’ä»¶
+        new webpack.BannerPlugin('This file is created by aji'),// Banner æ·»åŠ æ’ä»¶
+        new webpack.optimize.UglifyJsPlugin({//å‹ç¼©æ–‡ä»¶
             compress: {
                 warnings: false,
             },
@@ -48,15 +47,15 @@ module.exports = {
             },
         }),
     ],
-    devtool: 'eval-source-map',//ÅäÖÃÉú³ÉSource Maps£¬Ñ¡ÔñºÏÊÊµÄÑ¡Ïî£¬´ËÑ¡ÔñÓĞÀûÓÚµ÷ÊÔ£¬Ïê¼û£ºhttp://www.jianshu.com/p/42e11515c10f#
+    devtool: 'eval-source-map',//é…ç½®ç”ŸæˆSource Mapsï¼Œé€‰æ‹©åˆé€‚çš„é€‰é¡¹ï¼Œæ­¤é€‰æ‹©æœ‰åˆ©äºè°ƒè¯•ï¼Œè¯¦è§ï¼šhttp://www.jianshu.com/p/42e11515c10f#
     devServer: {
-        contentBase: "./dist",//±¾µØ·şÎñÆ÷Ëù¼ÓÔØµÄÒ³ÃæËùÔÚµÄÄ¿Â¼
-        colors: true,//ÖÕ¶ËÖĞÊä³ö½á¹ûÎª²ÊÉ«
-        historyApiFallback: true,//²»Ìø×ª£¬ÊÊºÏµ¥Ò³Ä£Ê½µÄÊ¹ÓÃ£¬ËùÓĞÖ¸Ïò¶¼Îª index.html
-        inline: true,//ÊµÊ±Ë¢ĞÂÒ³Ãæ£¬µ±ÓĞ¸Ä¶¯µÄÊ±ºò
-        port: 8080,//Ä¬ÈÏÎª 8080£¬¿É¸ù¾İĞèÇó¸Ä
+        contentBase: "./dist",//æœ¬åœ°æœåŠ¡å™¨æ‰€åŠ è½½çš„é¡µé¢æ‰€åœ¨çš„ç›®å½•
+        colors: true,//ç»ˆç«¯ä¸­è¾“å‡ºç»“æœä¸ºå½©è‰²
+        historyApiFallback: true,//ä¸è·³è½¬ï¼Œé€‚åˆå•é¡µæ¨¡å¼çš„ä½¿ç”¨ï¼Œæ‰€æœ‰æŒ‡å‘éƒ½ä¸º index.html
+        inline: true,//å®æ—¶åˆ·æ–°é¡µé¢ï¼Œå½“æœ‰æ”¹åŠ¨çš„æ—¶å€™
+        port: 8083,//é»˜è®¤ä¸º 8080ï¼Œå¯æ ¹æ®éœ€æ±‚æ”¹
     },
     postcss: [
-        require('autoprefixer')//µ÷ÓÃ¸Ã²å¼ş£¬×Ô¶¯Ìí¼Ó³§¼ÒÇ°×º
+        require('autoprefixer')//è°ƒç”¨è¯¥æ’ä»¶ï¼Œè‡ªåŠ¨æ·»åŠ å‚å®¶å‰ç¼€
     ]
 };

@@ -1,103 +1,137 @@
-##Ê²Ã´ÊÇWebpack£º##
+########################
+##   ä»€ä¹ˆæ˜¯Webpackï¼š   ##
+########################
 
-WebPack¿ÉÒÔ¿´×öÊÇÄ£¿é´ò°ü»ú£ºËü×öµÄÊÂÇéÊÇ£¬·ÖÎöÄãµÄÏîÄ¿½á¹¹£¬ÕÒµ½JavaScriptÄ£¿éÒÔ¼°ÆäËüµÄÒ»Ğ©ä¯ÀÀÆ÷²»ÄÜÖ±½ÓÔËĞĞµÄÍØÕ¹ÓïÑÔ£¨Scss£¬TypeScriptµÈ£©£¬²¢½«Æä´ò°üÎªºÏÊÊµÄ¸ñÊ½ÒÔ¹©ä¯ÀÀÆ÷Ê¹ÓÃ¡£
-
-
-
-##ÓÅµã£º##
-
-1£¬Ä£¿é»¯µÄ½â¾ö·½°¸
-2£¬±àÒëcoffeeScript/TypeScript/Less/Sass
-3£¬ÓĞÍ¬²½¼ÓÔØºÍÒì²½¼ÓÔØÁ½ÖÖ
-4£¬Ö§³Ö common js AMD ¹æ·¶
-5£¬´óĞÍÏîÄ¿µÄÄ£¿é»¯¡¢°´ĞèÒª¼ÓÔØ¡¢¸ù¾İÒÀÀµ
-6£¬Òì²½ I/O ºÍ¶à²ã»º´æ
+WebPackå¯ä»¥çœ‹åšæ˜¯æ¨¡å—æ‰“åŒ…æœºï¼šå®ƒåšçš„äº‹æƒ…æ˜¯ï¼Œåˆ†æä½ çš„é¡¹ç›®ç»“æ„ï¼Œæ‰¾åˆ°JavaScriptæ¨¡å—ä»¥åŠå…¶å®ƒçš„ä¸€äº›æµè§ˆå™¨ä¸èƒ½ç›´æ¥è¿è¡Œçš„æ‹“å±•è¯­è¨€ï¼ˆScssï¼ŒTypeScriptç­‰ï¼‰ï¼Œå¹¶å°†å…¶æ‰“åŒ…ä¸ºåˆé€‚çš„æ ¼å¼ä»¥ä¾›æµè§ˆå™¨ä½¿ç”¨ã€‚
 
 
 
-##Demo£º##
+########################
+##      ä¼˜ç‚¹ï¼š         ##
+########################
 
-1£¬È«¾Ö°²×° webpack
+1ï¼Œæ¨¡å—åŒ–çš„è§£å†³æ–¹æ¡ˆ
+2ï¼Œç¼–è¯‘coffeeScript/TypeScript/Less/Sass
+3ï¼Œæœ‰åŒæ­¥åŠ è½½å’Œå¼‚æ­¥åŠ è½½ä¸¤ç§
+4ï¼Œæ”¯æŒ common js AMD è§„èŒƒ
+5ï¼Œå¤§å‹é¡¹ç›®çš„æ¨¡å—åŒ–ã€æŒ‰éœ€è¦åŠ è½½ã€æ ¹æ®ä¾èµ–
+6ï¼Œå¼‚æ­¥ I/O å’Œå¤šå±‚ç¼“å­˜
+
+
+
+########################
+##       Demoï¼š       ##
+########################
+
+1ï¼Œå…¨å±€å®‰è£… webpack
 --npm install webpack -g
 
-2£¬°²×° webpack , webpack-dev-server ÒÀÀµ
+2ï¼Œå®‰è£… webpack , webpack-dev-server ä¾èµ–
 --npm install webpack webpack-dev-server --save-dev
 
-3£¬°²×° css-loader style-loader json-loaderÒÀÀµ
+3ï¼Œå®‰è£… css-loader style-loader json-loaderä¾èµ–
 --npm install css-loader style-loader json-loader --save-dev
 
-3.1 °²×° babel ±àÒë ES6¡¢ES7¡¢JSX µÈä¯ÀÀÆ÷ÎŞ·¨Ê¶±ğµÄ js
+3.1 å®‰è£… babel ç¼–è¯‘ ES6ã€ES7ã€JSX ç­‰æµè§ˆå™¨æ— æ³•è¯†åˆ«çš„ js
 npm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev
 
-3.2 °²×° postcsss-loader autoprefixer Ö§³Ö²»Í¬ css ÑùÊ½Ìí¼Ó³§¼ÒÇ°×º
+3.2 å®‰è£… postcsss-loader autoprefixer æ”¯æŒä¸åŒ css æ ·å¼æ·»åŠ å‚å®¶å‰ç¼€
 npm install --save-dev postcss-loader autoprefixer
 
-4£¬½¨Á¢Ïà¹ØµÄÎÄ¼ş¼Ğ¼°ÎÄ¼ş
-    webpack.config.js               //ÅäÖÃÎÄ¼ş£¬²¢ÔÚ¸ÃÎÄ¼şÀï±à¼­²ÎÊı£¬ÈçÄ£¿éµÄÒıÓÃ£¬²å¼şµÄÒıÓÃ£¬Êä³öµÄÎ»ÖÃµÈ²ÎÊı
-    app--                           //´æ·ÅÔ­Ê¼Êı¾İ¼°Ïà¹Ø js Ä£¿é
-       -- entry.js                  //Èë¿ÚÎÄ¼ş
-       module--                     //´æ·ÅÏà¹ØjsÄ£¿é
-             --module1.js           //Ä£¿éÎÄ¼ş
+4ï¼Œå»ºç«‹ç›¸å…³çš„æ–‡ä»¶å¤¹åŠæ–‡ä»¶
+    webpack.config.js               //é…ç½®æ–‡ä»¶ï¼Œå¹¶åœ¨è¯¥æ–‡ä»¶é‡Œç¼–è¾‘å‚æ•°ï¼Œå¦‚æ¨¡å—çš„å¼•ç”¨ï¼Œæ’ä»¶çš„å¼•ç”¨ï¼Œè¾“å‡ºçš„ä½ç½®ç­‰å‚æ•°
+    app--                           //å­˜æ”¾åŸå§‹æ•°æ®åŠç›¸å…³ js æ¨¡å—
+       -- entry.js                  //å…¥å£æ–‡ä»¶
+       module--                     //å­˜æ”¾ç›¸å…³jsæ¨¡å—
+             --module1.js           //æ¨¡å—æ–‡ä»¶
        style--
-            --style.css             //ÑùÊ½ÎÄ¼ş
-    dist--                          //´æ·Å´ò°üºóµÄÎÄ¼ş£¬¼° index.html Èë¿Ú
+            --style.css             //æ ·å¼æ–‡ä»¶
+    dist--                          //å­˜æ”¾æ‰“åŒ…åçš„æ–‡ä»¶ï¼ŒåŠ index.html å…¥å£
         --index.html
 
 
-5£¬ÔÚ npm package.json ÎÄ¼şÖĞ¼ÓÈë×Ô¶¨ÒåµÄ scripts Ò»Ğ©ÃüÁî£¬ÒÔ·½±ãÔÚ¿ØÖÆÌ¨µ÷ÓÃ£¬Èç£º
+5ï¼Œåœ¨ npm package.json æ–‡ä»¶ä¸­åŠ å…¥è‡ªå®šä¹‰çš„ scripts ä¸€äº›å‘½ä»¤ï¼Œä»¥æ–¹ä¾¿åœ¨æ§åˆ¶å°è°ƒç”¨ï¼Œå¦‚ï¼š
 
   "scripts": {
-    "build": "webpack --progress --colors", //ÏÔÊ¾½ø³ÌÓëÑÕÉ«
-    "builddev":"webpack-dev-server --progress --colors --inline --watch" //--watch ×Ô¶¯±àÒë¡¢ --inline ×Ô¶¯Ë¢ĞÂ
-    "builddetails":"webpack-dev-server --display-error-details"//´òÓ¡´íÎóµÄÏêÏ¸ĞÅÏ¢
-    "dev":"webpack-dev-server" //Ê¹ÓÃ¿ª·¢·şÎñÆ÷Ä£Ê½£¬´ËÄ£Ê½µÄÅäÖÃÒÀÀµÓÚ webpack.config.js ÖĞµÄ devServer ÅäÖÃ
+    "build": "webpack --progress --colors", //æ˜¾ç¤ºè¿›ç¨‹ä¸é¢œè‰²
+    "builddev":"webpack-dev-server --progress --colors --inline --watch" //--watch è‡ªåŠ¨ç¼–è¯‘ã€ --inline è‡ªåŠ¨åˆ·æ–°
+    "builddetails":"webpack-dev-server --display-error-details"//æ‰“å°é”™è¯¯çš„è¯¦ç»†ä¿¡æ¯
+    "dev":"webpack-dev-server" //ä½¿ç”¨å¼€å‘æœåŠ¡å™¨æ¨¡å¼ï¼Œæ­¤æ¨¡å¼çš„é…ç½®ä¾èµ–äº webpack.config.js ä¸­çš„ devServer é…ç½®
   },
 
-  Ö´ĞĞÃüÁîÎª£º--npm run task-name
+  æ‰§è¡Œå‘½ä»¤ä¸ºï¼š--npm run task-name
 
 
 
 
-##Ïà¹ØÃüÁî£º##
+########################
+##    ç›¸å…³å‘½ä»¤ï¼š       ##
+########################
 
-** npm install webpack -g                         È«¾Ö°²×°
-** npm install webpack --save-dev	              ÒÀÀµ°²×°
-** npm install webpack-dev-server -g	          °²×° dev server ¿ª·¢·şÎñÆ÷°æ±¾£¬±¾µØ·şÎñÆ÷£¬¿É¼àÌı´úÂë±ä»¯²¢×Ô¶¯Ë¢ĞÂä¯ÀÀÆ÷
-** npm install webpack-dev-server --save-dev      °²×°ÒÀÀµ
+** npm install webpack -g                         å…¨å±€å®‰è£…
+** npm install webpack --save-dev	              ä¾èµ–å®‰è£…
+** npm install webpack-dev-server -g	          å®‰è£… dev server å¼€å‘æœåŠ¡å™¨ç‰ˆæœ¬ï¼Œæœ¬åœ°æœåŠ¡å™¨ï¼Œå¯ç›‘å¬ä»£ç å˜åŒ–å¹¶è‡ªåŠ¨åˆ·æ–°æµè§ˆå™¨
+** npm install webpack-dev-server --save-dev      å®‰è£…ä¾èµ–
 
-** webpack                                        Ö´ĞĞ´ò°üÃüÁî
-** webpack ./entry.js bundle.js                   ´ò°ü¶ÔÏó
-** webpack --progress --colors                    ´ò°ü£¨ÑÕÉ«Óë½ø¶È£©
-** webpack --config  XXXX.js                      Ê¹ÓÃÁíÒ»·İÅäÖÃÎÄ¼şxxxx.js´ò°ü£¬ÊÊºÏ²»Í¬»·¾³µÄ´ò°ü¶È
-** webpack -p                                     Ñ¹Ëõ»ìÏı½Å±¾£¬Õâ¸ö·Ç³£·Ç³£ÖØÒª£¡
-** webpack -d                                     Éú³ÉmapÓ³ÉäÎÄ¼ş£¬¸æÖªÄÄĞ©Ä£¿é±»×îÖÕ´ò°üµ½ÄÄÀïÁË
+** webpack                                        æ‰§è¡Œæ‰“åŒ…å‘½ä»¤
+** webpack ./entry.js bundle.js                   æ‰“åŒ…å¯¹è±¡
+** webpack --progress --colors                    æ‰“åŒ…ï¼ˆé¢œè‰²ä¸è¿›åº¦ï¼‰
+** webpack --config  XXXX.js                      ä½¿ç”¨å¦ä¸€ä»½é…ç½®æ–‡ä»¶xxxx.jsæ‰“åŒ…ï¼Œé€‚åˆä¸åŒç¯å¢ƒçš„æ‰“åŒ…åº¦
+** webpack -p                                     å‹ç¼©æ··æ·†è„šæœ¬ï¼Œè¿™ä¸ªéå¸¸éå¸¸é‡è¦ï¼
+** webpack -d                                     ç”Ÿæˆmapæ˜ å°„æ–‡ä»¶ï¼Œå‘ŠçŸ¥å“ªäº›æ¨¡å—è¢«æœ€ç»ˆæ‰“åŒ…åˆ°å“ªé‡Œäº†
+** webpack -w                                     æä¾›watchæ–¹æ³•ï¼Œå®æ—¶è¿›è¡Œæ‰“åŒ…æ›´æ–°
+** webpack --profile                              è¾“å‡ºæ€§èƒ½æ•°æ®ï¼Œå¯ä»¥çœ‹åˆ°æ¯ä¸€æ­¥çš„è€—æ—¶
+** webpack --display-modules                      é»˜è®¤æƒ…å†µä¸‹ node_modules ä¸‹çš„æ¨¡å—ä¼šè¢«éšè—ï¼ŒåŠ ä¸Šè¿™ä¸ªå‚æ•°å¯ä»¥æ˜¾ç¤ºè¿™äº›è¢«éšè—çš„æ¨¡å—
 ** webpack-dev-server --progress --colors --watch --inline
-        ´ò°ü£¨¼àÌıÎÄ¼ş±ä»¯²¢ËæÊ±´ò°ü£©£º»á»º³åÒÑ´ò°üºÃµÄÄ£¿é£¬ÒÔ±ãµ±Ä£¿éÃ»ÓĞ¸Ä±äµÄÊ±ºò£¬¸ßËÙÌáÈ¡Î´¸Ä±äÄ£¿éÒÔ¼Ó¿ì±àÒëËÙ¶È
-	    ÒªÔÚwebpack-config.js ÀïÉèÖÃÏà¹Ø¶Ë¿ÚµÈ¡£´Ë²Ù×÷ÄÜ´ò°ü²¢ÔËĞĞÄÚÖÃ·şÎñÆ÷¡£¿ÉÔÚ package.jsonÖĞÉèÖÃÓ³ÉäÃüÁîÒÔ·½±ã
+        æ‰“åŒ…ï¼ˆç›‘å¬æ–‡ä»¶å˜åŒ–å¹¶éšæ—¶æ‰“åŒ…ï¼‰ï¼šä¼šç¼“å†²å·²æ‰“åŒ…å¥½çš„æ¨¡å—ï¼Œä»¥ä¾¿å½“æ¨¡å—æ²¡æœ‰æ”¹å˜çš„æ—¶å€™ï¼Œé«˜é€Ÿæå–æœªæ”¹å˜æ¨¡å—ä»¥åŠ å¿«ç¼–è¯‘é€Ÿåº¦
+	    è¦åœ¨webpack-config.js é‡Œè®¾ç½®ç›¸å…³ç«¯å£ç­‰ã€‚æ­¤æ“ä½œèƒ½æ‰“åŒ…å¹¶è¿è¡Œå†…ç½®æœåŠ¡å™¨ã€‚å¯åœ¨ package.jsonä¸­è®¾ç½®æ˜ å°„å‘½ä»¤ä»¥æ–¹ä¾¿
+
 
 
 ####################
-##    Ïà¹ØÁ´½Ó£º   ##
+##    ç›¸å…³é“¾æ¥ï¼š   ##
 ####################
-¼òÊé£ºhttp://www.jianshu.com/p/42e11515c10f#
-GitHub±È½ÏÈ«µÄÖĞÎÄµÄÎÄµµ£ºhttps://github.com/liunian/webpack-doc/blob/master/SUMMARY.md
-±È½ÏÈëÃÅ¼¶µÄÖĞÎÄÖ¸ÄÏ£ºhttps://zhaoda.gitbooks.io/webpack/content/index.html
+ç®€ä¹¦ï¼š                     http://www.jianshu.com/p/42e11515c10f#
+GitHubæ¯”è¾ƒå…¨çš„ä¸­æ–‡çš„æ–‡æ¡£ï¼šhttps://github.com/liunian/webpack-doc/blob/master/SUMMARY.md
+æ¯”è¾ƒå…¥é—¨çº§çš„ä¸­æ–‡æŒ‡å—ï¼šhttps://zhaoda.gitbooks.io/webpack/content/index.html
 
-GitHub ¹ÙÍø£ºhttp://webpack.github.io
-Ò»¸ö±È½ÏÖĞ¿ÏµÄ½éÉÜ£ºhttps://github.com/wangning0/Autumn_Ning_Blog/blob/master/blogs/3-12/webpack.md
+GitHub å®˜ç½‘ï¼š              http://webpack.github.io
+æ–‡æ¡£ï¼š                     http://webpack.github.io/docs/
+ä¸€ä¸ªæ¯”è¾ƒä¸­è‚¯çš„ä»‹ç»ï¼š
+https://github.com/wangning0/Autumn_Ning_Blog/blob/master/blogs/3-12/webpack.md
+https://diamont1001.github.io/webpack-summary/
+
+ä¸€ä¸ªç»“åˆ vue çš„æ‰“åŒ…çš„ä»‹ç»ï¼šhttp://guowenfh.github.io/2016/03/28/vue-webpack-06-router/
+ä¸€ä¸ªæ¯”è¾ƒå¥½çš„Demo   http://www.hubwiz.com/class/5670d0a77e7d40946afc5e65
+                https://segmentfault.com/a/1190000002552008
+æ›´å¥½ï¼šhttps://segmentfault.com/a/1190000002551952
+http://www.w3ctech.com/topic/1557
+
+ä¸€ä¸ª github çš„ ruanyf demo   https://github.com/ruanyf/webpack-demos
+
+node.js http://javascript.ruanyifeng.com/#nodejs
 
 
+http://www.w2bc.com/Article/50764                                   --read
+http://xingdongpeng.com/2016/08/15/webpack-%E6%80%BB%E7%BB%93/      --read
+http://www.cnblogs.com/giveiris/p/5237080.html
+http://www.w2bc.com/article/101955
+https://github.com/petehunt/webpack-howto
+https://github.com/webpack/webpack
+https://github.com/vikingmute/webpack-for-fools/blob/master/entries/chapter-1.md
 
-#############
-##  ¶îÍâµÄ£º##
-#############
-**°²×° jquery ²¢´ò°üÒıÓÃ£º
-ÃüÁî£ºnpm install --save jquery babel-polyfill
-Èë¿ÚÎÄ¼ş£º import $ from 'jquery'
 
-**°²×° Í¼Æ¬Ñ¹Ëõ²¢´ò°üÒıÓÃ £º
-ÃüÁî£ºnpm install image-webpack-loader --save-dev
-Ê¹ÓÃ£ºloaders:[
+###############################
+##           é¢å¤–çš„ï¼š         ##
+###############################
+**å®‰è£… jquery å¹¶æ‰“åŒ…å¼•ç”¨ï¼š
+å‘½ä»¤ï¼šnpm install --save jquery babel-polyfill
+å…¥å£æ–‡ä»¶ï¼š import $ from 'jquery'
+
+
+**å®‰è£… å›¾ç‰‡å‹ç¼©å¹¶æ‰“åŒ…å¼•ç”¨ ï¼š
+å‘½ä»¤ï¼šnpm install image-webpack-loader --save-dev
+ä½¿ç”¨ï¼šloaders:[
       {
             test: /\.(png|jpg)$/,
             loaders: [
@@ -105,4 +139,22 @@ GitHub ¹ÙÍø£ºhttp://webpack.github.io
                 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
             ]
         }
+]
+** å®‰è£… url-loader é¢„å¤„ç†å›¾ç‰‡ï¼š
+å‘½ä»¤ï¼šnpm install url-loader --save-dev
+ä½¿ç”¨ï¼š
+loaders:[
+    {
+       test: /\.(png|jpg)$/,
+       loader: "url-loader?limit=8192"
+    }
+       // æ·»åŠ åˆ°è¿™ï¼å¹¶ä¸”ä¼šæŒ‰ç…§æ–‡ä»¶å¤§å°, æˆ–è€…è½¬åŒ–ä¸º base64, æˆ–è€…å•ç‹¬ä½œä¸ºæ–‡ä»¶
+       //åœ¨å¤§å°é™åˆ¶åå¯ä»¥åŠ ä¸Š&name=./[name].[ext]ï¼Œä¼šå°†æˆ‘ä»¬çš„æ–‡ä»¶ç”Ÿæˆåœ¨è®¾å®šçš„æ–‡ä»¶å¤¹ä¸‹
+]
+
+** å®‰è£… less-loader å¤„ç† less æ–‡ä»¶ï¼š
+å‘½ä»¤ï¼šnpm install less-loader --save-dev
+ä½¿ç”¨ï¼š
+loaders:[
+    loaders:['style-loader', 'css-loader','less-loader']
 ]
