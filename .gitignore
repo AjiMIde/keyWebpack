@@ -43,4 +43,5 @@ Temporary Items
 .apdisk
 
 # aji - node_modules
-/webpack1/node_modules/*
+node_modules/*
+.idea/
