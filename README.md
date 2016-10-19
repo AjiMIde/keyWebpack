@@ -8,7 +8,7 @@ My webpack learn , difficult and heavy
 WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），
 并将其打包为合适的格式以供浏览器使用。
 
-## 优点：
+##### 优点：
 
 1. 模块化的解决方案
 2. 编译coffeeScript/TypeScript/Less/Sass
@@ -19,11 +19,7 @@ WebPack可以看做是模块打包机：它做的事情是，分析你的项目�
 
 
 
-
-
-
-
-##### Common Command：
+## Common Command：
 
 1. 全局安装 webpack
 > npm install webpack -g
@@ -41,12 +37,15 @@ WebPack可以看做是模块打包机：它做的事情是，分析你的项目�
 > npm install --save-dev postcss-loader autoprefixer
 
 6. 执行打包命令
+```
 > webpack                                        执行打包命令<br>
 > webpack ./entry.js bundle.js                   打包对象<br>
 > webpack --progress --colors                    打包（颜色与进度）<br>
 > webpack --config  XXXX.js                      使用另一份配置文件xxxx.js打包，适合不同环境的打包度<br>
+```
 
 7. 其他命令
+```
 > webpack -p                                     压缩混淆脚本，这个非常非常重要！<br>
 > webpack -d                                     生成map映射文件，告知哪些模块被最终打包到哪里了<br>
 > webpack -w                                     提供watch方法，实时进行打包更新<br>
@@ -55,7 +54,7 @@ WebPack可以看做是模块打包机：它做的事情是，分析你的项目�
 > webpack-dev-server --progress --colors --watch --inline
 打包（监听文件变化并随时打包）：会缓冲已打包好的模块，以便当模块没有改变的时候，高速提取未改变模块以加快编译速度
 	    要在webpack-config.js 里设置相关端口等。此操作能打包并运行内置服务器。可在 package.json中设置映射命令以方便
-
+```
 8. 其他安装
 
 * 安装 jquery 并打包引用：

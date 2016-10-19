@@ -16,18 +16,14 @@ app                            //存放原始数据及相关 js 模块
 
 3. 参考 Readme.md 中执行 `Common NPM Config`
 
-########################
-##    相关命令：       ##
-########################
 
+##    相关链接：
 
-
-####################
-##    相关链接：   ##
-####################
-简书：                     http://www.jianshu.com/p/42e11515c10f#
-GitHub比较全的中文的文档：https://github.com/liunian/webpack-doc/blob/master/SUMMARY.md
-比较入门级的中文指南：https://zhaoda.gitbooks.io/webpack/content/index.html
+* 简书：                     http://www.jianshu.com/p/42e11515c10f#
+    - 80% 不错
+* GitHub比较全的中文的文档：   https://github.com/liunian/webpack-doc/blob/master/SUMMARY.md
+    - 50% 不错
+* 比较入门级的中文指南：https://zhaoda.gitbooks.io/webpack/content/index.html
 
 GitHub 官网：              http://webpack.github.io
 文档：                     http://webpack.github.io/docs/
